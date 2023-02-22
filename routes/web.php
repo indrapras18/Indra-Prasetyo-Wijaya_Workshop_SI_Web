@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InformasiController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\ManagementUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// ------------------------------- MINGGU 2 -------------------------------
 Route::get('/', function () {
     return view('welcome');
 });
@@ -51,3 +52,23 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/data', [HomeController::class, 'data'])->name('data');
 });
+
+// ------------------------------- MINGGU 3 -------------------------------
+
+Route::get('test', [ManagementUserController::class, 'test']);
+/*
+disini saya akan mengambil contoh penggunaan method get pada route di bagian web.php
+route ini akan mengambil data dari controller karena method yang digunakan adalah method get. 
+Disini data yang diambil dari route tersebut merupakan data yang sebelumnya kita buat oada Controllers ManagementuserController.php
+pada sebuah function yang bernama index(). Disini kita juga dapat memanggil function dari controller yang berbeda juga. methode yang digunakan
+pada route juga dapat berfariasi tidak hanya menggunakan get saja.
+*/
+Route::get('create', [ManagementUserController::class, 'create']);
+
+Route::get('store', [ManagementUserController::class, 'store']);
+
+Route::get('user',[ManagementUserController::class,'edit']);
+
+Route::resource('user', ManagementUserController::class);
+
+Route::get('edit', [ManagementUserController::class, 'edit']);
