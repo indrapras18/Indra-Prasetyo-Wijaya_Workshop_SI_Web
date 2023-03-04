@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\RumahController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -72,3 +73,12 @@ Route::get('user',[ManagementUserController::class,'edit']);
 Route::resource('user', ManagementUserController::class);
 
 Route::get('edit', [ManagementUserController::class, 'edit']);
+
+// ------------------------------- MINGGU 4 -------------------------------
+
+Route::get('homee', [RumahController::class, 'rumah']);
+
+/*
+disini saya membuat route baru dengan menggunakan fungsi get unutk menampilkan halaman 
+view yang bernama homee.blade
+*/
