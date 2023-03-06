@@ -19,7 +19,7 @@ use App\Http\Controllers\ManagementUserController;
 */
 // ------------------------------- MINGGU 2 -------------------------------
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.homee');
 });
 /*
 MINGGU 2
@@ -49,7 +49,11 @@ Namun, jika pengguna diautentikasi, middleware akan mengizinkan permintaan untuk
 melanjutkan lebih jauh ke dalam aplikas
 */
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
+
+Route::get('/index2', [HomeController::class, 'index2'])->name('index2'); /** merupakan route untuk memnaggil dashboard admin index ke 2 */
+
+Route::get('/index3', [HomeController::class, 'index3'])->name('index3'); /** merupakan route untuk memnaggil dashboard admin index ke 3 */
 
 Route::get('/data', [HomeController::class, 'data'])->name('data');
 });

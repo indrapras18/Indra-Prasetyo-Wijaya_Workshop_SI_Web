@@ -31,7 +31,7 @@
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
-
+          <li><a href="/home">Login</a></li> <!-- menambahkan link untuk menuju ke halaman login -->
         </ul>
       </nav><!-- .nav-menu -->
 
