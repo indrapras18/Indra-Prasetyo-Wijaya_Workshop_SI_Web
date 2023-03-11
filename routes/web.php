@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\ManagementUserController;
 
 /*
@@ -80,9 +81,11 @@ Route::get('edit', [ManagementUserController::class, 'edit']);
 
 // ------------------------------- MINGGU 4 -------------------------------
 
-Route::get('homee', [RumahController::class, 'rumah']);
+Route::get('homee', [RumahController::class, 'rumah'])->name('homee');
 
 /*
 disini saya membuat route baru dengan menggunakan fungsi get unutk menampilkan halaman 
 view yang bernama homee.blade
 */
+
+Route::post('/add', [KomentarController::class, 'add']);
