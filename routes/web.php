@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\ManagementUserController;
+use App\Http\Controllers\PekerjaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +42,13 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function(){
 /*
-Minggu 2
+Minggu 6
 Middleware merupakan penyedia mekanisme yang mudah untuk
 memfilter permintaan HTTP yang memasuki aplikasi Kita. Misalnya, Laravel menyertakan
 middleware yang memverifikasi bahwa pengguna aplikasi Kita telah diautentikasi. Jika
 pengguna tidak diautentikasi, middleware akan mengarahkan pengguna ke layar login.
 Namun, jika pengguna diautentikasi, middleware akan mengizinkan permintaan untuk
-melanjutkan lebih jauh ke dalam aplikas
+melanjutkan lebih jauh ke dalam aplikasi
 */
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
@@ -89,3 +90,5 @@ view yang bernama homee.blade
 */
 
 Route::post('/add', [KomentarController::class, 'add']);
+
+Route::get('pekerjaan', [PekerjaanController::class, 'pekerjaan'])->name('pekerjaan');
